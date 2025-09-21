@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order confirmation - Thank you for your purchase at Profilioo. Your order has been successfully placed.">
+    <meta name="keywords" content="order confirmation, purchase successful, Profilioo">
+    <title>Order Successful - Profilioo | Thank You for Your Purchase</title>
+    
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <i class="fas fa-store text-2xl text-blue-600 mr-2"></i>
+                        <span class="text-2xl font-bold text-gray-800">Profilioo</span>
+                    </a>
+                </div>
+
+                <!-- Success Progress -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="ml-2 text-sm font-medium text-gray-800">Cart</span>
+                    </div>
+                    <div class="w-12 h-px bg-green-600"></div>
+                    <div class="flex items-center">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="ml-2 text-sm font-medium text-gray-800">Checkout</span>
+                    </div>
+                    <div class="w-12 h-px bg-green-600"></div>
+                    <div class="flex items-center">
+                        <div class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <span class="ml-2 text-sm font-medium text-gray-800">Complete</span>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-gray-600 hover:text-blue-600 transition">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Success Content -->
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Success Message -->
+        <div class="text-center mb-12">
+            <div class="mb-8">
+                <div class="inline-flex items-center justify-center w-24 h-24 bg-green-100 rounded-full mb-6">
+                    <i class="fas fa-check-circle text-4xl text-green-600"></i>
+                </div>
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Order Successful!</h1>
+                <p class="text-xl text-gray-600 mb-6">
+                    Thank you for your purchase. Your order has been successfully placed and is being processed.
+                </p>
+                <div class="bg-green-50 border border-green-200 rounded-lg p-4 inline-block">
+                    <p class="text-green-800">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        A confirmation email has been sent to your email address.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Details -->
+        <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Order Details</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Order Info -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Order Information</h3>
+                    <dl class="space-y-3">
+                        <div class="flex justify-between">
+                            <dt class="text-gray-600">Order Number:</dt>
+                            <dd id="order-number" class="font-semibold text-gray-800">-</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-600">Order Date:</dt>
+                            <dd id="order-date" class="text-gray-800">-</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-600">Payment Method:</dt>
+                            <dd id="payment-method" class="text-gray-800">-</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-600">Shipping Method:</dt>
+                            <dd id="shipping-method" class="text-gray-800">-</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-600">Estimated Delivery:</dt>
+                            <dd id="estimated-delivery" class="text-gray-800">-</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Shipping Address -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Shipping Address</h3>
+                    <div id="shipping-address" class="text-gray-600">
+                        <!-- Address will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Items -->
+        <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Items Ordered</h2>
+            <div id="order-items-list" class="space-y-4">
+                <!-- Items will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="bg-white rounded-xl shadow-sm p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Order Summary</h2>
+            <div class="space-y-3">
+                <div class="flex justify-between text-gray-600">
+                    <span>Subtotal</span>
+                    <span id="summary-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between text-gray-600">
+                    <span>Shipping</span>
+                    <span id="summary-shipping">$0.00</span>
+                </div>
+                <div class="flex justify-between text-gray-600">
+                    <span>Tax</span>
+                    <span id="summary-tax">$0.00</span>
+                </div>
+                <div id="summary-discount-row" class="flex justify-between text-green-600 hidden">
+                    <span>Discount</span>
+                    <span id="summary-discount">-$0.00</span>
+                </div>
+                <div class="flex justify-between text-xl font-bold text-gray-800 border-t border-gray-200 pt-3">
+                    <span>Total</span>
+                    <span id="summary-total">$0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="bg-blue-50 rounded-xl p-8 mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">What Happens Next?</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Order Processing</h3>
+                    <p class="text-sm text-gray-600">
+                        We're preparing your items for shipment. This usually takes 1-2 business days.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Shipping</h3>
+                    <p class="text-sm text-gray-600">
+                        Your order will be shipped and you'll receive a tracking number via email.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Delivery</h3>
+                    <p class="text-sm text-gray-600">
+                        Your package will arrive at your doorstep according to the estimated delivery date.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="text-center space-y-4">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button id="track-order" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    <i class="fas fa-search mr-2"></i>
+                    Track Your Order
+                </button>
+                <a href="/" class="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+                    Continue Shopping
+                </a>
+                <button id="download-receipt" class="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition">
+                    <i class="fas fa-download mr-2"></i>
+                    Download Receipt
+                </button>
+            </div>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="bg-gray-100 rounded-xl p-8 mt-12">
+            <div class="text-center">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Need Help?</h2>
+                <p class="text-gray-600 mb-6">
+                    Our customer support team is here to assist you with any questions about your order.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://blog.profilioo.com/contact-us" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Contact Support
+                    </a>
+                    <a href="https://blog.profilioo.com/faq" class="text-blue-600 hover:text-blue-800 transition">
+                        <i class="fas fa-question-circle mr-2"></i>
+                        View FAQ
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">You Might Also Like</h2>
+            <div class="grid md:grid-cols-3 gap-6" id="recommended-products">
+                <!-- Recommendations will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-store text-2xl text-blue-400 mr-2"></i>
+                        <span class="text-2xl font-bold">Profilioo</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">Your premium e-commerce destination for quality products and exceptional service.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://blog.profilioo.com" class="text-gray-300 hover:text-blue-400 transition" rel="dofollow">
+                            <i class="fas fa-blog"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-white transition">Products</a></li>
+                        <li><a href="categories.html" class="text-gray-300 hover:text-white transition">Categories</a></li>
+                        <li><a href="https://blog.profilioo.com/about-us" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="https://blog.profilioo.com/contact-us" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://blog.profilioo.com/shipping-info" class="text-gray-300 hover:text-white transition">Shipping Info</a></li>
+                        <li><a href="https://blog.profilioo.com/returns" class="text-gray-300 hover:text-white transition">Returns</a></li>
+                        <li><a href="https://blog.profilioo.com/faq" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                        <li><a href="https://blog.profilioo.com/support" class="text-gray-300 hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://blog.profilioo.com/privacy-policy" class="text-gray-300 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="https://blog.profilioo.com/terms" class="text-gray-300 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="https://blog.profilioo.com/disclaimer" class="text-gray-300 hover:text-white transition">Disclaimer</a></li>
+                        <li><a href="https://profilioo.com" class="text-blue-400 hover:text-blue-300 transition" rel="dofollow">Get Template</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 Profilioo. All rights reserved. | Powered by <a href="https://profilioo.com" class="text-blue-400 hover:text-blue-300 transition" rel="dofollow">Profilioo</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/order-success.js"></script>
+</body>
+</html>

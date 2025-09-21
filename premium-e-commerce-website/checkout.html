@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your purchase securely at Profilioo. Safe checkout with multiple payment options and fast shipping.">
+    <meta name="keywords" content="checkout, secure payment, online shopping, Profilioo">
+    <title>Checkout - Profilioo | Complete Your Purchase</title>
+    
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <i class="fas fa-store text-2xl text-blue-600 mr-2"></i>
+                        <span class="text-2xl font-bold text-gray-800">Profilioo</span>
+                    </a>
+                </div>
+
+                <!-- Checkout Progress -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                        <span class="ml-2 text-sm font-medium text-gray-800">Cart</span>
+                    </div>
+                    <div class="w-12 h-px bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                        <span class="ml-2 text-sm font-medium text-gray-800">Checkout</span>
+                    </div>
+                    <div class="w-12 h-px bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div class="bg-gray-300 text-gray-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                        <span class="ml-2 text-sm font-medium text-gray-600">Complete</span>
+                    </div>
+                </div>
+
+                <!-- Security Badge -->
+                <div class="flex items-center text-green-600">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    <span class="text-sm font-medium">Secure Checkout</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12">
+            <!-- Checkout Form -->
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <h1 class="text-2xl font-bold text-gray-800 mb-8">Checkout</h1>
+                
+                <form id="checkout-form" class="space-y-6">
+                    <!-- Contact Information -->
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Contact Information</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required class="form-input" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required class="form-input" placeholder="+1 (555) 123-4567">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Shipping Address</h2>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required class="form-input">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                                <input type="text" id="address" name="address" required class="form-input" placeholder="123 Main Street">
+                            </div>
+                            <div>
+                                <label for="apartment" class="block text-sm font-medium text-gray-700 mb-2">Apartment, suite, etc. (optional)</label>
+                                <input type="text" id="apartment" name="apartment" class="form-input" placeholder="Apartment 4B">
+                            </div>
+                            <div class="grid grid-cols-3 gap-4">
+                                <div>
+                                    <label for="city" class="block text-sm font-medium text-gray-700 mb-2">City</label>
+                                    <input type="text" id="city" name="city" required class="form-input">
+                                </div>
+                                <div>
+                                    <label for="state" class="block text-sm font-medium text-gray-700 mb-2">State</label>
+                                    <select id="state" name="state" required class="form-input">
+                                        <option value="">Select State</option>
+                                        <option value="CA">California</option>
+                                        <option value="NY">New York</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="FL">Florida</option>
+                                        <!-- Add more states as needed -->
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="zip" class="block text-sm font-medium text-gray-700 mb-2">ZIP Code</label>
+                                    <input type="text" id="zip" name="zip" required class="form-input" placeholder="12345">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Method -->
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Shipping Method</h2>
+                        <div class="space-y-3">
+                            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="shipping" value="standard" class="mr-3" checked>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium">Standard Shipping</span>
+                                        <span class="text-green-600 font-semibold">FREE</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">5-7 business days</p>
+                                </div>
+                            </label>
+                            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="shipping" value="express" class="mr-3">
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium">Express Shipping</span>
+                                        <span class="font-semibold">$9.99</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">2-3 business days</p>
+                                </div>
+                            </label>
+                            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="shipping" value="overnight" class="mr-3">
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-medium">Overnight Shipping</span>
+                                        <span class="font-semibold">$24.99</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Next business day</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4">Payment Method</h2>
+                        <div class="space-y-4">
+                            <!-- Credit Card -->
+                            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="payment" value="card" class="mr-3" checked>
+                                <div class="flex items-center">
+                                    <i class="fas fa-credit-card text-gray-600 mr-3"></i>
+                                    <span class="font-medium">Credit / Debit Card</span>
+                                    <div class="ml-4 flex space-x-2">
+                                        <i class="fab fa-cc-visa text-blue-600"></i>
+                                        <i class="fab fa-cc-mastercard text-red-500"></i>
+                                        <i class="fab fa-cc-amex text-blue-500"></i>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Card Details -->
+                            <div id="card-details" class="space-y-4 ml-8">
+                                <div>
+                                    <label for="cardNumber" class="block text-sm font-medium text-gray-700 mb-2">Card Number</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" required class="form-input" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="expiry" class="block text-sm font-medium text-gray-700 mb-2">Expiry Date</label>
+                                        <input type="text" id="expiry" name="expiry" required class="form-input" placeholder="MM/YY">
+                                    </div>
+                                    <div>
+                                        <label for="cvv" class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
+                                        <input type="text" id="cvv" name="cvv" required class="form-input" placeholder="123">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="cardName" class="block text-sm font-medium text-gray-700 mb-2">Name on Card</label>
+                                    <input type="text" id="cardName" name="cardName" required class="form-input" placeholder="John Doe">
+                                </div>
+                            </div>
+
+                            <!-- PayPal -->
+                            <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                                <input type="radio" name="payment" value="paypal" class="mr-3">
+                                <div class="flex items-center">
+                                    <i class="fab fa-paypal text-blue-600 text-xl mr-3"></i>
+                                    <span class="font-medium">PayPal</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Billing Address -->
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="sameAsShipping" checked class="mr-3">
+                            <label for="sameAsShipping" class="text-sm font-medium text-gray-700">
+                                Billing address same as shipping address
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="mt-8 lg:mt-0">
+                <div class="bg-white rounded-xl shadow-sm p-8 sticky top-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">Order Summary</h2>
+                    
+                    <!-- Order Items -->
+                    <div id="order-items" class="space-y-4 mb-6">
+                        <!-- Items will be loaded here -->
+                    </div>
+
+                    <!-- Promo Code -->
+                    <div class="border-t border-gray-200 pt-6 mb-6">
+                        <div class="flex space-x-2">
+                            <input type="text" id="promoCode" placeholder="Promo code" class="flex-1 form-input">
+                            <button type="button" id="applyPromo" class="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition">
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Order Totals -->
+                    <div class="space-y-3 border-t border-gray-200 pt-6">
+                        <div class="flex justify-between text-gray-600">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-gray-600">
+                            <span>Shipping</span>
+                            <span id="shipping-cost">FREE</span>
+                        </div>
+                        <div class="flex justify-between text-gray-600">
+                            <span>Tax</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div id="discount-row" class="flex justify-between text-green-600 hidden">
+                            <span>Discount</span>
+                            <span id="discount">-$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-xl font-bold text-gray-800 border-t border-gray-200 pt-3">
+                            <span>Total</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Place Order Button -->
+                    <button type="submit" form="checkout-form" class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition mt-6">
+                        <i class="fas fa-lock mr-2"></i>
+                        Place Order
+                    </button>
+
+                    <!-- Security Notice -->
+                    <div class="flex items-center justify-center mt-4 text-sm text-gray-600">
+                        <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                        Your payment information is secure and encrypted
+                    </div>
+
+                    <!-- Return Policy -->
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <h3 class="font-medium text-gray-800 mb-2">Return Policy</h3>
+                        <p class="text-sm text-gray-600">
+                            30-day return policy. Items must be in original condition. 
+                            <a href="https://blog.profilioo.com/returns" class="text-blue-600 hover:text-blue-800 transition">Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <i class="fas fa-store text-2xl text-blue-400 mr-2"></i>
+                    <span class="text-2xl font-bold">Profilioo</span>
+                </div>
+                <p class="text-gray-300 mb-4">Secure checkout powered by <a href="https://profilioo.com" class="text-blue-400 hover:text-blue-300 transition" rel="dofollow">Profilioo</a></p>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://blog.profilioo.com/privacy-policy" class="text-gray-300 hover:text-white transition">Privacy Policy</a>
+                    <a href="https://blog.profilioo.com/terms" class="text-gray-300 hover:text-white transition">Terms of Service</a>
+                    <a href="https://blog.profilioo.com/contact-us" class="text-gray-300 hover:text-white transition">Support</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

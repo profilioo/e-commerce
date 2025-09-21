@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our extensive collection of premium products at Profilioo. Find electronics, fashion, home decor and more with advanced filtering and sorting options.">
+    <meta name="keywords" content="products, electronics, fashion, home decor, online shopping, Profilioo">
+    <title>Products - Profilioo | Browse Our Premium Collection</title>
+    
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Structured Data for Products -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Products - Profilioo",
+        "description": "Browse our extensive collection of premium products",
+        "url": "https://profilioo.com/products.html",
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Profilioo Products",
+            "numberOfItems": "500+"
+        }
+    }
+    </script>
+</head>
+<body class="font-inter bg-gray-50">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center">
+                        <i class="fas fa-store text-2xl text-blue-600 mr-2"></i>
+                        <span class="text-2xl font-bold text-gray-800">Profilioo</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium transition">Home</a>
+                        <a href="products.html" class="text-gray-800 hover:text-blue-600 px-3 py-2 font-medium transition">Products</a>
+                        <a href="categories.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium transition">Categories</a>
+                        <a href="https://blog.profilioo.com/about-us" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium transition">About</a>
+                        <a href="https://blog.profilioo.com/contact-us" class="text-gray-600 hover:text-blue-600 px-3 py-2 font-medium transition">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex flex-1 max-w-lg mx-8">
+                    <div class="w-full relative">
+                        <input type="text" id="product-search" placeholder="Search products..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="absolute right-2 top-2 text-gray-500 hover:text-blue-600" id="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-blue-600 transition" id="cart-btn">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="bg-blue-600 text-white text-xs rounded-full px-1 ml-1" id="cart-count">0</span>
+                    </button>
+                    <a href="https://profilioo.com" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition font-medium">Get Template</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="flex items-center space-x-4">
+                    <li>
+                        <a href="/" class="text-gray-500 hover:text-blue-600 transition">Home</a>
+                    </li>
+                    <li class="text-gray-300">/</li>
+                    <li class="text-gray-800 font-medium">Products</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Our Products</h1>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover our carefully curated collection of premium products. 
+                    From the latest electronics to stylish fashion and elegant home decor.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Products -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-4 lg:gap-8">
+                <!-- Filters Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-xl shadow-sm p-6 sticky top-24">
+                        <h3 class="text-lg font-semibold mb-6">Filters</h3>
+                        
+                        <!-- Category Filter -->
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-3">Category</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="all" class="category-filter mr-2" checked>
+                                    <span class="text-sm">All Categories</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="electronics" class="category-filter mr-2">
+                                    <span class="text-sm">Electronics</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="fashion" class="category-filter mr-2">
+                                    <span class="text-sm">Fashion</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" value="home" class="category-filter mr-2">
+                                    <span class="text-sm">Home & Living</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range Filter -->
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-3">Price Range</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" value="all" class="price-filter mr-2" checked>
+                                    <span class="text-sm">All Prices</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" value="0-50" class="price-filter mr-2">
+                                    <span class="text-sm">Under $50</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" value="50-100" class="price-filter mr-2">
+                                    <span class="text-sm">$50 - $100</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" value="100-200" class="price-filter mr-2">
+                                    <span class="text-sm">$100 - $200</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="price" value="200+" class="price-filter mr-2">
+                                    <span class="text-sm">$200+</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Rating Filter -->
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-3">Customer Rating</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="rating" value="all" class="rating-filter mr-2" checked>
+                                    <span class="text-sm">All Ratings</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="rating" value="4+" class="rating-filter mr-2">
+                                    <div class="flex items-center">
+                                        <div class="flex text-yellow-400 text-xs mr-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="text-sm">& Up</span>
+                                    </div>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="rating" value="4.5+" class="rating-filter mr-2">
+                                    <div class="flex items-center">
+                                        <div class="flex text-yellow-400 text-xs mr-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <span class="text-sm">& Up</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Clear Filters -->
+                        <button id="clear-filters" class="w-full bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300 transition">
+                            Clear All Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="lg:col-span-3 mt-8 lg:mt-0">
+                    <!-- Sort and View Options -->
+                    <div class="bg-white rounded-xl shadow-sm p-4 mb-6">
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="flex items-center space-x-4">
+                                <span class="text-gray-600">Sort by:</span>
+                                <select id="sort-select" class="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="featured">Featured</option>
+                                    <option value="name-asc">Name (A-Z)</option>
+                                    <option value="name-desc">Name (Z-A)</option>
+                                    <option value="price-asc">Price (Low to High)</option>
+                                    <option value="price-desc">Price (High to Low)</option>
+                                    <option value="rating">Rating</option>
+                                    <option value="newest">Newest</option>
+                                </select>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4">
+                                <span class="text-gray-600">View:</span>
+                                <div class="flex border border-gray-300 rounded-lg overflow-hidden">
+                                    <button id="grid-view" class="px-3 py-2 bg-blue-600 text-white hover:bg-blue-700 transition">
+                                        <i class="fas fa-th"></i>
+                                    </button>
+                                    <button id="list-view" class="px-3 py-2 bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
+                                        <i class="fas fa-list"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-sm text-gray-600">
+                            Showing <span id="results-count">0</span> products
+                        </div>
+                    </div>
+
+                    <!-- Products Container -->
+                    <div id="products-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <!-- Products will be loaded here -->
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="text-center mt-12">
+                        <button id="load-more" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                            Load More Products
+                        </button>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div id="no-results" class="text-center py-16 hidden">
+                        <div class="text-gray-400 text-6xl mb-4">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-600 mb-2">No products found</h3>
+                        <p class="text-gray-500">Try adjusting your filters or search terms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl transform translate-x-full transition-transform z-50">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold">Shopping Cart</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="cart-items" class="space-y-4 mb-6">
+                <!-- Cart items will be populated here -->
+            </div>
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-lg font-semibold">Total:</span>
+                    <span id="cart-total" class="text-xl font-bold text-blue-600">$0.00</span>
+                </div>
+                <button class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Checkout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-store text-2xl text-blue-400 mr-2"></i>
+                        <span class="text-2xl font-bold">Profilioo</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">Your premium e-commerce destination for quality products and exceptional service.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-blue-400 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://blog.profilioo.com" class="text-gray-300 hover:text-blue-400 transition" rel="dofollow">
+                            <i class="fas fa-blog"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white transition">Home</a></li>
+                        <li><a href="products.html" class="text-gray-300 hover:text-white transition">Products</a></li>
+                        <li><a href="categories.html" class="text-gray-300 hover:text-white transition">Categories</a></li>
+                        <li><a href="https://blog.profilioo.com/about-us" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="https://blog.profilioo.com/contact-us" class="text-gray-300 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://blog.profilioo.com/shipping-info" class="text-gray-300 hover:text-white transition">Shipping Info</a></li>
+                        <li><a href="https://blog.profilioo.com/returns" class="text-gray-300 hover:text-white transition">Returns</a></li>
+                        <li><a href="https://blog.profilioo.com/faq" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                        <li><a href="https://blog.profilioo.com/support" class="text-gray-300 hover:text-white transition">Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://blog.profilioo.com/privacy-policy" class="text-gray-300 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="https://blog.profilioo.com/terms" class="text-gray-300 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="https://blog.profilioo.com/disclaimer" class="text-gray-300 hover:text-white transition">Disclaimer</a></li>
+                        <li><a href="https://profilioo.com" class="text-blue-400 hover:text-blue-300 transition" rel="dofollow">Get Template</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2024 Profilioo. All rights reserved. | Powered by <a href="https://profilioo.com" class="text-blue-400 hover:text-blue-300 transition" rel="dofollow">Profilioo</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>
